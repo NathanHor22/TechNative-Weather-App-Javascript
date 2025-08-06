@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Capitals Weather App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Weather App Container -->
+    <div class="weather-app">
+        <h1>World Capitals Weather</h1>
+        <!-- Search Bar -->
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Enter city or country...">
+            <button id="search-btn">Search</button>
+        </div>
+        <!-- Loading Spinner -->
+        <div id="loading-spinner" class="spinner hidden"></div>
+        <!-- Error Message -->
+        <div id="error-message" class="error hidden"></div>
+        <!-- Weather Display -->
+        <div id="weather-display" class="weather-display hidden">
+            <img id="weather-icon" src="" alt="Weather Icon" class="weather-icon">
+            <div id="weather-info"></div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
