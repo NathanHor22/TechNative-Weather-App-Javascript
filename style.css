@@ -1,3 +1,5 @@
+
+/* Background picture */
 body::before {
     content: "";
     position: fixed;
@@ -6,11 +8,12 @@ body::before {
     width: 100vw;
     height: 100vh;
     background: url('assets/world-map.jpg') center center/cover no-repeat;
-    opacity: 0.2; /* World map image opacity */
+    opacity: 0.2;
     z-index: 1;
     pointer-events: none;
 }
 
+/* Overlay to make sure the background picture is not too bright */
 body::after {
     content: "";
     position: fixed;
@@ -19,10 +22,12 @@ body::after {
     width: 100vw;
     height: 100vh;
     background: black;
-    opacity: 0.2; /* Black overlay opacity, adjust as needed */
+    opacity: 0.1; 
     z-index: 1;
     pointer-events: none;
 }
+
+/* Main weather app container */
 .weather-app {
     background: #ffffff00;
     max-width: 800px;
@@ -31,6 +36,8 @@ body::after {
     padding: 32px 24px 24px 24px;
     text-align: center;
 }
+
+/*Search Function */
 .search-container {
     display: flex;
     justify-content: center;
@@ -58,6 +65,8 @@ body::after {
 #search-btn:hover {
     background: #1e109b;
 }
+
+/* Spinner for loading */
 .spinner {
     border: 6px solid #f3f3f3;
     border-top: 6px solid #4fc3f7;

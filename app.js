@@ -28,16 +28,17 @@ function hideLoading() {
     loadingSpinner.classList.add('hidden');
 }
 
-// Show error message
+// Shows error message
 function showError(msg) {
     errorMessage.textContent = msg;
     errorMessage.classList.remove('hidden');
     weatherDisplay.classList.add('hidden');
 }
 
-// Show weather data
+// Shows weather data
+//It determines the weather icon based on the weather code
+// and updates the weather display with the current temperature and description.
 function showWeather(data, city) {
-    // Determine icon based on weather code
     let icon = weatherIcons.sunny;
     let description = 'Sunny';
     if (data.weathercode === 3 || data.weathercode === 2) {
@@ -49,7 +50,6 @@ function showWeather(data, city) {
     }
     weatherIcon.src = icon;
     weatherIcon.alt = description;
-    // Use 'temperature' property from Open-Meteo current_weather
     weatherInfo.innerHTML = `
         <strong>${city}</strong><br>
         Temperature: ${data.temperature}°C<br>
@@ -97,16 +97,14 @@ async function handleSearch() {
     }
 }
 
-// Event listeners
+// Event listeners and getting user input
 searchBtn.addEventListener('click', handleSearch);
 searchInput.addEventListener('keydown', function(e) {
     if (e.key === 'Enter') handleSearch();
 });
 
-// Optionally, show weather for a default city on load
+//Show weather for a default city on load
 window.addEventListener('DOMContentLoaded', () => {
     searchInput.value = 'London';
     handleSearch();
 });
-
-// End of app.js
