@@ -1,6 +1,5 @@
-// app.js
-// Main JavaScript for World Capitals Weather App
-
+// app.js - Weather App using Open-Meteo APIs
+// This script handles fetching weather data based on user input and displaying it on the page.``
 // DOM Elements
 const searchInput = document.getElementById('search-input');
 const searchBtn = document.getElementById('search-btn');
@@ -65,7 +64,7 @@ async function fetchCoordinates(city) {
     const res = await fetch(url);
     if (!res.ok) throw new Error('Failed to fetch coordinates');
     const data = await res.json();
-    if (!data.results || data.results.length === 0) throw new Error('City not found');
+    if (!data.results || data.results.length === 0) throw new Error('Uh Oh! Seems like that location doesn\'t exist');
     return data.results[0];
 }
 
